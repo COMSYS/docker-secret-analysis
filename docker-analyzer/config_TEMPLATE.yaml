@@ -1,0 +1,26 @@
+credentials:
+  - domain: domain
+    username: username
+    password: password
+
+paths:
+  log_path: path
+  image_path: path
+  tmp_path: path
+
+quota:
+  max_read: 10737418240
+  max_bandwidth: 12500000
+  max_memory: 1073741824
+  max_size_per_reg: 104857600
+  timeout: 120
+
+rabbitmq:
+  host: host
+  username: username
+  password: password
+  queue: queue
+
+num_requesters: 16
+num_workers: 16
+force_reanalysis: true

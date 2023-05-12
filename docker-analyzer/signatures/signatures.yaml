@@ -1,0 +1,149 @@
+hyperscan:
+  howbadcanitgit:
+    Twitter: >
+      \b[1-9][0-9]+-[0-9a-zA-Z]{40}\b
+    Facebook: >
+      \bEAACEdEose0cBA[0-9A-Za-z]+\b
+    Google_YouTubeAPI: >
+      \bAIza[0-9A-Za-z\-_]{35}\b
+    Google_YoutubeOAuth: >
+      \b[0-9]+-[0-9A-Za-z_]{32}\.apps\.googleusercontent\.com\b
+    Picatic: >
+      \bsk_live_[0-9a-z]{32}\b
+    StripeST: >
+      \bsk_live_[0-9a-zA-Z]{24}\b
+    StripeRe: >
+      \brk_live_[0-9a-zA-Z]{24}\b
+    SquareAT: >
+      \bsq0atp-[0-9A-Za-z\-_]{22}\b
+    SquareOA: >
+      \bsq0csp-[0-9A-Za-z\-_]{43}\b
+    PayPal_Braintree: >
+      \baccess_token\$production\$[0-9a-z]{16}\$[0-9a-f]{32}\b
+    Amozon_MWS: >
+      \bamzn\.mws\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b
+    Gmail: >
+      \b([a-zA-Z0-9]+)([\.{1}])?([a-zA-Z0-9]+)\@gmail([\.])com\b
+    Twilio: >
+      \bSK[0-9a-fA-F]{32}\b
+    MailGun: >
+      \bkey-[0-9a-zA-Z]{32}\b
+    MailChimp: >
+      \b[0-9a-f]{32}-us[0-9]{1,2}\b
+    Amazon_AWS: >
+      \bAKIA[0-9A-Z]{16}\b
+  ssh:
+    SshRsaPublicKeyBlock: >
+      \bssh-rsa AAAA\S+ \S+\b
+    SshGenericPublicKeyBlock: >
+      \bssh-[0-9a-zA-Z]+ AAAA\S+ \S+\b
+  trufflehog:
+    aws: >
+      \b((?:AKIA|ABIA|ACCA|ASIA)[0-9A-Z]{16})\b
+    gcp: >
+      \{[^{]+auth_provider_x509_cert_url[^}]+\}
+    azure_oauth_client: >
+      (?i)(client_id|clientid).{0,20}([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})
+    azure_oauth_tenant: >
+      (?i)(tenant_id|tenantid).{0,20}([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})
+    azure_old: >
+      (?i)(client_secret|clientsecret).{0,20}([a-z0-9_\.\-~]{34})
+    heroku: >
+      (?i)(?:heroku)(?:.|[\n\r]){0,40}\b([0-9Aa-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\b
+    digitaloceantoken: >
+      (?i)(?:digitalocean)(?:.|[\n\r]){0,40}\b([A-Za-z0-9_-]{64})\b
+    ibmclouduserkey: >
+      (?i)(?:ibm)(?:.|[\n\r]){0,40}\b([A-Za-z0-9_-]{44})\b
+    gitlab: >
+      (?i)(?:gitlab)(?:.|[\n\r]){0,40}\b([a-zA-Z0-9\-=_]{20,22})\b
+    gitlabv2: >
+      \b(glpat-[a-zA-Z0-9\-=_]{20,22})\b
+    github: >
+      \b((?:ghp|gho|ghu|ghs|ghr)_[a-zA-Z0-9]{36,255})\b
+    currencycloud: >
+      (?i)(?:currencycloud)(?:.|[\n\r]){0,40}\b([a-zA-Z0-9\-=_]{20,22})\b
+    openuv: >
+      (?i)(?:openuv)(?:.|[\n\r]){0,40}\b([0-9a-z]{32})\b
+    netlify: >
+      (?i)(?:netlify)(?:.|[\n\r]){0,40}\b([A-Za-z0-9_-]{43,45})\b
+    coinbase: >
+      (?i)(?:coinbase)(?:.|[\n\r]){0,40}\b([a-zA-Z-0-9]{64})\b
+    bitfenix: >
+      (?i)(?:bitfinex)(?:.|[\n\r]){0,40}\b([A-Za-z0-9_-]{43})\b
+    alibaba: >
+      \b(LTAI[a-zA-Z0-9]{17,21})[\"';\s]*
+    adafruitio: >
+      \b(aio\_[a-zA-Z0-9]{28})\b
+    accuweather: >
+      (?i)(?:accuweather)(?:.|[\n\r]){0,40}([a-z0-9A-Z\%]{35})\b
+    wepay: >
+      (?i)(?:wepay)(?:.|[\n\r]){0,40}\b([a-zA-Z0-9_?]{62})\b
+    tomtom: >
+      (?i)(?:tomtom)(?:.|[\n\r]){0,40}\b([0-9Aa-zA-Z]{32})\b
+    ticketmaster: >
+      (?i)(?:ticketmaster)(?:.|[\n\r]){0,40}\b([a-zA-Z0-9]{32})\b
+    facebookid: >
+      \b([A-Za-z0-9_\.]{7}-[A-Za-z0-9_\.]{72})\b
+    facebookkey: >
+      \b([A-Za-z0-9_\.]{69}-[A-Za-z0-9_\.]{10})\b
+    paymongo: >
+      (?i)(?:paymongo)(?:.|[\n\r]){0,40}\b([a-zA-Z0-9_]{32})\b
+    paymoapp: >
+      (?i)(?:paymoapp)(?:.|[\n\r]){0,40}\b([a-zA-Z0-9]{44})\b
+    paydirtapp: >
+      (?i)(?:paydirtapp)(?:.|[\n\r]){0,40}\b([a-z0-9]{32})\b
+    microsoftteamswebhook: >
+      (https:\/\/[a-zA-Z-0-9]+\.webhook\.office\.com\/webhookb2\/[a-zA-Z-0-9]{8}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{12}\@[a-zA-Z-0-9]{8}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{12}\/IncomingWebhook\/[a-zA-Z-0-9]{32}\/[a-zA-Z-0-9]{8}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{12})
+    loginradius: >
+      (?i)(?:loginradius)(?:.|[\n\r]){0,40}\b([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\b
+  comsys:
+    privatekey: >
+      (?i)-----\s*?BEGIN[ A-Z0-9_-]*?PRIVATE KEY\s*?-----[a-zA-Z0-9\/\n\r=+]*-----\s*?END[ A-Z0-9_-]*? PRIVATE KEY\s*?-----
+    privatekeyblock: >
+      (?i)-----\s*?BEGIN[ A-Z0-9_-]*?PRIVATE KEY BLOCK\s*?-----[a-zA-Z0-9\/\n\r=+]*-----\s*?END[ A-Z0-9_-]*? PRIVATE KEY BLOCK\s*?-----
+    certificate: >
+      (?i)-----\s*?BEGIN CERTIFICATE\s*?-----[a-zA-Z0-9\/\n\r=+]*-----\s*?END CERTIFICATE\s*?-----
+    publickey: >
+      (?i)-----\s*?BEGIN[ A-Z0-9_-]*?PUBLIC KEY\s*?-----[a-zA-Z0-9\/\n\r=+]*-----\s*?END[ A-Z0-9_-]*? PUBLIC KEY\s*?-----
+    publickeyblock: >
+      (?i)-----\s*?BEGIN[ A-Z0-9_-]*?PUBLIC KEY BLOCK\s*?-----[a-zA-Z0-9\/\n\r=+]*-----\s*?END[ A-Z0-9_-]*? PUBLIC KEY BLOCK\s*?-----
+    certificaterequest: >
+      (?i)-----\s*?BEGIN CERTIFICATE REQUEST\s*?-----[a-zA-Z0-9\/\n\r=+]*-----\s*?END CERTIFICATE REQUEST\s*?-----
+    pkcs7: >
+      (?i)-----\s*?BEGIN PKCS7\s*?-----[a-zA-Z0-9\/\n\r=+]*-----\s*?END PKCS7\s*?-----
+    xmlrsakey: >
+      (?i)<RSAKeyValue>(.|[\n\r])+?<\/RSAKeyValue>
+    xmldsakey: >
+      (?i)<DSAKeyValue>(.|[\n\r])+?</DSAKeyValue>
+    xmleckey: >
+      (?i)<ECKeyValue>(.|[\n\r])+?</ECKeyValue>
+    xmlderencodedkey: >
+      (?i)<DEREncodedKeyValue>(.|[\n\r])+?</DEREncodedKeyValue>
+
+
+fileextension:
+  - crt
+  - gpg
+  - key
+  - p12
+  - pem
+  - pkey
+  - ppk
+  - priv
+  - rsa
+  - cfg
+  - conf
+  - config
+  - ini
+  - ovpn
+  - plist
+  - properties
+  - p7b
+  - p7c
+  - csr
+  - cer
+  - der
+  - p8
+  - p8e
+  - pri
+  - epk
